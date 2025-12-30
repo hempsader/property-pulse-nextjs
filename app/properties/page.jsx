@@ -3,12 +3,9 @@ import { useRouter, useParams } from "next/navigation";
 
 
 const PropertiesPage = () => {
-    const router = useRouter();
-    const params = useParams();
-
-    return ( <div>
-        Property Page {params.id}
-    </div> );
+    return  <div>
+        Properties Page 
+    </div> ;
 }
  
 export default PropertiesPage;
