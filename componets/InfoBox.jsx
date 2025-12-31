@@ -11,7 +11,7 @@ const InfoBox = ({heading, bgColor='bg-gray-100'
             </p>
             <Link
               href={buttonInfo.link}
-              className={`${buttonInfo.bgColor} inline-block  text-white rounded-lg px-4 py-2 hover:bg-gray-700`}
+              className={`${buttonInfo.bgColor } inline-block  text-white rounded-lg px-4 py-2 hover:bg-gray-700`}
             >
               {buttonInfo.text}
             </Link>
