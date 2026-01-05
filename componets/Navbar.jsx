@@ -12,7 +12,9 @@ import { signIn,signOut, useSession,getProviders } from 'next-auth/react';
 
 const Navbar = () => {
     const {data: session} = useSession();
-    
+
+    const prfofileImage = session?.user?.image;
+
     const [isMobileMobileOpen, setIsMobilMenuOpen] = useState(false);
     const [isProfilemenuOpen, setProfilemenuOpen] = useState(false);
     const [providers, setProviders]= useState(null);
@@ -160,7 +162,9 @@ const Navbar = () => {
                   <span className="sr-only">Open user menu</span>
                   <Image
                     className="h-8 w-8 rounded-full"
-                    src={profileDefault}
+                    src={prfofileImage || profileDefault}
+                    width={40}
+                    height={40}
                     alt=""
                   />
                 </button>
@@ -192,6 +196,10 @@ const Navbar = () => {
                   >Saved Properties</Link
                 >
                 <button
+                  onClick={()=> {
+                    setIsMobilMenuOpen(false)
+                    signOut()
+                  }}
                   className="block px-4 py-2 text-sm text-gray-700"
                   role="menuitem"
                   tabIndex="-1"
